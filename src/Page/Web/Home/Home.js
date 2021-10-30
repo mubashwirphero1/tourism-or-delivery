@@ -1,13 +1,12 @@
 import React from 'react';
+import './Home.css'
 
 const Home = () => {
     return (
         <>
             {/* Banner top area */}
-            <div className="banner-top py-6 text-center">
-                <h1 className="md:text-4xl sm:2xl">
+            <div className="py-6 banner-top text-center">
 
-                </h1>
             </div>
         </>
     );
