@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './Page/Shared/Footer';
 import Header from './Page/Shared/Header';
 import AboutUS from './Page/Web/AboutUS/AboutUS';
+import ContactUS from './Page/Web/ContactUS/ContactUS';
 import Home from './Page/Web/Home/Home';
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/about">
             <AboutUS></AboutUS>
+          </Route>
+          <Route path="/contact">
+            <ContactUS></ContactUS>
           </Route>
         </Switch>
         <Footer></Footer>

@@ -1,5 +1,5 @@
 .banner-top{
-    background-image: url("https://images.unsplash.com/photo-1473625247510-8ceb1760943f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHRyYXZlbGxpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+    background: linear-gradient(-90deg, #ffffff4d, #fdfdfd44) , url('https://images.unsplash.com/photo-1473625247510-8ceb1760943f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHRyYXZlbGxpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
