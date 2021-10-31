@@ -5,6 +5,7 @@ import Header from './Page/Shared/Header';
 import AboutUS from './Page/Web/AboutUS/AboutUS';
 import ContactUS from './Page/Web/ContactUS/ContactUS';
 import Home from './Page/Web/Home/Home';
+import NotFound from './Page/Web/PageNotFound/NotFound';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <ContactUS></ContactUS>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>

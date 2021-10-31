@@ -7,8 +7,8 @@ const ContactUS = () => {
         <>
             {/* Banner area */}
             <div className="banner-top-area py-40 px-8 text-center text-yellow-500 font-semibold">
-                <p className="text-xl">Stay Connected With</p>
-                <h1 className="text-6xl">Travel GURU</h1>
+                <p className="text-xl font-semibold">Stay Connected With</p>
+                <h1 className="lg:text-8xl md:text-4xl sm:text-2xl font-bold">Travel GURU</h1>
             </div>
 
             {/* Heading text */}
@@ -17,10 +17,8 @@ const ContactUS = () => {
                     <h1 className="text-5xl font-medium">Contact Us Now</h1>
                     <br />
                     <p className="text-lg">
-                        Si elit omnes impedit ius, vel et hinc agam fabulas. Ut audiam invenire iracundia vim. Tn ea diam ea. Piber Korem sit amet.
+                        If you want to contact with us checkout our FACEBOOK, TWITTER, LINKEDIN, INSTAGRAM. Also you can check our EMAIL. OR call us in our HOTLINE
                     </p>
-                    <br />
-                    <p className="text-base">Al elit omnes impedfghit ius, vel et hinc agam fabulas. Ut audiam inve nire iracu ndia vim. En eam dico simi lique, ut sint posse sit, eum sumo diam ea. Liber consec tetuer in mei, sea in imperdiet assue verit contentiones, an his cibo bla ndit tacimates. Iusto iudi cabit simil ique id velex, in sea rebum deser uisse appntur honcus. Maece nas cibo blandit tacim ates sint posse.</p>
                 </div>
                 <img className="rounded-2xl" src="https://media.istockphoto.com/photos/phone-and-email-icons-on-wooden-cubes-with-contact-us-text-on-blue-picture-id1271752802?b=1&k=20&m=1271752802&s=170667a&w=0&h=sMEPVY49FAy2UHkhyQLWDHlAhYsR2F2NDkNlSEteO3s=" alt="" />
             </div>
