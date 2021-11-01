@@ -1,10 +1,12 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { LocationMarkerIcon, MailIcon, MenuIcon, PhoneIcon, ShoppingCartIcon, XIcon } from '@heroicons/react/outline'
+import { LocationMarkerIcon, MailIcon, MenuIcon, PhoneIcon, ShoppingCartIcon, UserIcon, XIcon } from '@heroicons/react/outline'
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
+    const { user, userName, logOut } = useAuth();
     function classNames(...classes) {
         return classes.filter(Boolean).join(' ')
     }
@@ -53,22 +55,21 @@ const Header = () => {
                                     </div>
                                 </div>
                                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                    <NavLink
+                                    {user?.email ? <NavLink
                                         to="/cart"
                                         className="p-1 rounded-full text-yellow-500 hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-yellow-500 focus:ring-white"
                                     >
-                                        <span className="sr-only">Your cart</span>
                                         <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                                    </NavLink>
-
+                                    </NavLink> : <p></p>}
+                                    {userName ? <p className='text-black text-xl'>{userName}</p> : <p></p>}
                                     {/* Profile dropdown */}
-                                    <Menu as="div" className="ml-3 relative">
+                                    {user?.email ? <Menu as="div" className="ml-3 relative">
                                         <div>
                                             <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                                                 <span className="sr-only">Open user menu</span>
                                                 <img
                                                     className="h-8 w-8 rounded-full"
-                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                    src={user.photoURL ? user.photoURL : <UserIcon />}
                                                     alt=""
                                                 />
                                             </Menu.Button>
@@ -86,6 +87,7 @@ const Header = () => {
                                                 <Menu.Item>
                                                     {({ active }) => (
                                                         <button
+                                                            onClick={logOut}
                                                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                                                         >
                                                             Sign out
@@ -94,7 +96,8 @@ const Header = () => {
                                                 </Menu.Item>
                                             </Menu.Items>
                                         </Transition>
-                                    </Menu>
+                                    </Menu> : <div className='flex'>
+                                        <NavLink to="/login" className="text-black hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sign in</NavLink></div>}
                                 </div>
                             </div>
                         </div>
