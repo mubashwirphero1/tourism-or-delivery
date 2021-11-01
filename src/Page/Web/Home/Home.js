@@ -9,7 +9,7 @@ import './Home.css'
 const Home = () => {
     const [spots, setSpots] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:5000/homeSpots")
+        axios.get("https://tranquil-basin-17723.herokuapp.com/homeSpots")
             .then(res => setSpots(res.data))
     }, [])
     console.log(spots)

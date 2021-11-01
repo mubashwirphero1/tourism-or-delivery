@@ -10,7 +10,7 @@ const Cart = () => {
 
     const [cart, setCart] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:5000/cart")
+        axios.get("https://tranquil-basin-17723.herokuapp.com/cart")
             .then(res => setCart(res.data))
     }, [])
 
@@ -24,7 +24,7 @@ const Cart = () => {
     const deletePackage = id => {
         const warning = window.confirm("Are you sure want to remove this package")
         if (warning) {
-            axios.delete(`http://localhost:5000/cart/${id}`)
+            axios.delete(`https://tranquil-basin-17723.herokuapp.com/cart/${id}`)
                 .then(res => console.log(res));
 
             const remainingPackage = cart.filter(cartItem => cartItem._id != id)
@@ -34,7 +34,7 @@ const Cart = () => {
 
     // Handle checkout
     const checkout = () => {
-        axios.delete(`http://localhost:5000/carts/${user.email}`)
+        axios.delete(`https://tranquil-basin-17723.herokuapp.com/carts/${user.email}`)
             .then(res => console.log(res));
         alert('Thank you');
         setCart([])

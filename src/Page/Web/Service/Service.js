@@ -11,14 +11,14 @@ const Service = () => {
 
     const [spots, setSpots] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:5000/spots")
+        axios.get("https://tranquil-basin-17723.herokuapp.com/spots")
             .then(res => setSpots(res.data))
     }, [])
 
     // Getting items on cart
     const [cart, setCart] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:5000/cart")
+        axios.get("https://tranquil-basin-17723.herokuapp.com/cart")
             .then(res => setCart(res.data))
     }, [])
 
@@ -34,7 +34,7 @@ const Service = () => {
             return;
         }
         else {
-            axios.post("http://localhost:5000/cart", {
+            axios.post("https://tranquil-basin-17723.herokuapp.com/cart", {
                 order: expectedSpot,
                 id: expectedSpot._id,
                 email: user.email
