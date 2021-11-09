@@ -42,8 +42,8 @@ const Service = () => {
                 email: user.email
             })
                 .then(res => {
-                    history.push("/cart");
                     console.log(res);
+                    history.push("/cart")
                 })
         }
     }
