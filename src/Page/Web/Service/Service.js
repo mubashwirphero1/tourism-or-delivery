@@ -2,10 +2,12 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import useAuth from '../../../Hooks/useAuth';
 
 const Service = () => {
+    const history = useHistory();
+
     const { loading, user } = useAuth();
     const { spotName } = useParams();
 
@@ -41,6 +43,7 @@ const Service = () => {
             })
                 .then(res => console.log(res))
         }
+        history.push("/cart")
     }
 
     if (loading) return <p className="text-base text-center font-medium">LOADING</p>
