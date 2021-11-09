@@ -41,9 +41,11 @@ const Service = () => {
                 id: expectedSpot._id,
                 email: user.email
             })
-                .then(res => console.log(res))
+                .then(res => {
+                    console.log(res)
+                    history.push("/cart")
+                })
         }
-        history.push("/cart")
     }
 
     if (loading) return <p className="text-base text-center font-medium">LOADING</p>
